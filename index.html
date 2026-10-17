@@ -53,6 +53,7 @@ body{
 .enlaces a{color:#e8c870;text-decoration:none;margin-right:14px;cursor:pointer}
 .enlaces a:hover{text-decoration:underline}
 
+.version{position:absolute;right:8px;top:6px;font-size:10px;color:rgba(255,255,255,.45)}
 .boton{position:absolute;cursor:pointer;text-align:center;font-weight:bold;border-radius:3px}
 .config{right:190px;top:24px;width:120px;height:34px;line-height:34px;font-size:12px;color:#222;
   background:linear-gradient(#ffffff,#c9ced9);border:1px solid #7b8396}
@@ -67,6 +68,7 @@ body{
 </head>
 <body>
 <div class="sombra"></div>
+<div class="version">v3</div>
 
 <div class="letrero">NuestroRO<small>PRE-RENEWAL · 99/70 · DESDE CIUDAD DE MÉXICO</small></div>
 
@@ -96,6 +98,12 @@ body{
 
 <script>
 var listoParaJugar = false;
+var hayRespuesta = false;
+
+// Cualquier error de esta página se muestra en lugar de quedarse escondido
+window.onerror = function (mensaje, archivo, linea) {
+  document.getElementById('estado').innerHTML = 'Error en la ventana: ' + mensaje + ' (línea ' + linea + ')';
+};
 
 // rPatchur expone external.invoke. En IE11 no se puede preguntar si existe
 // (typeof sobre un método COM falla), así que se llama directo; en un
@@ -109,6 +117,7 @@ function mandar(orden) {
 }
 
 function pintar(porcentaje, clase, texto) {
+  hayRespuesta = true;
   var relleno = document.getElementById('relleno');
   relleno.style.width = porcentaje + '%';
   relleno.className = 'relleno' + (clase ? ' ' + clase : '');
@@ -126,7 +135,20 @@ function jugar() {
 
 function reintentar() {
   pintar(0, '', 'Buscando actualizaciones…');
+  hayRespuesta = false;
   mandar('start_update');
+  vigilar();
+}
+
+// Si el patcher no contesta nada, que se note
+function vigilar() {
+  setTimeout(function () {
+    if (!hayRespuesta) {
+      pintar(100, 'error', 'El patcher no respondió en 30 segundos. Revisa tu internet y dale Buscar de nuevo.');
+      hayRespuesta = false;
+      activarJugar();
+    }
+  }, 30000);
 }
 
 function reparar() {
@@ -170,7 +192,7 @@ function notificationInProgress() {
   document.getElementById('estado').innerHTML = 'Ya se está actualizando, espera tantito…';
 }
 
-window.onload = function () { mandar('start_update'); };
+window.onload = function () { mandar('start_update'); vigilar(); };
 </script>
 </body>
 </html>
