@@ -97,10 +97,14 @@ body{
 <script>
 var listoParaJugar = false;
 
-// rPatchur expone external.invoke; en un navegador normal no existe.
+// rPatchur expone external.invoke. En IE11 no se puede preguntar si existe
+// (typeof sobre un método COM falla), así que se llama directo; en un
+// navegador normal no existe y cae al catch.
 function mandar(orden) {
-  if (window.external && typeof window.external.invoke !== 'undefined') {
+  try {
     window.external.invoke(orden);
+  } catch (e) {
+    document.getElementById('estado').innerHTML = 'Abre el patcher para actualizar.';
   }
 }
 
