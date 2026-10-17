@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Ventana del patcher (rPatchur). Pensada para 780x520.
+     rPatchur la muestra con el motor de Internet Explorer 11:
+     solo JavaScript ES5, nada de variables CSS ni imágenes .webp. -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>NuestroRO</title>
+<style>
+html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden}
+body{
+  position:relative;
+  background:#1a1208 url(img/fondo.jpg) right center no-repeat;
+  font:13px Tahoma,Verdana,Arial,sans-serif;color:#222;
+  -ms-user-select:none;user-select:none;cursor:default
+}
+/* Oscurece la izquierda para que se lea el texto */
+.sombra{position:absolute;left:0;top:0;bottom:0;width:470px;
+  background:linear-gradient(to right,rgba(16,10,4,.88) 0%,rgba(16,10,4,.6) 70%,rgba(16,10,4,0) 100%)}
+
+.letrero{position:absolute;left:26px;top:20px;
+  font:bold 40px/1 Georgia,"Times New Roman",serif;color:#fffbe8;letter-spacing:1px;
+  text-shadow:2px 2px 0 #3a2a10,-1px -1px 0 #3a2a10,1px -1px 0 #3a2a10,-1px 1px 0 #3a2a10}
+.letrero small{display:block;margin-top:6px;font:bold 11px Tahoma,Verdana,sans-serif;
+  letter-spacing:2px;color:#fff;text-shadow:1px 1px 0 #000}
+
+/* Ventanas al estilo de la interfaz de RO */
+.ventana{position:absolute;background:#eef0f4;border:1px solid #2b3a63;border-radius:3px;
+  box-shadow:0 2px 8px rgba(0,0,0,.5)}
+.barra{height:22px;line-height:22px;padding:0 8px;color:#fff;font-weight:bold;font-size:12px;
+  background:linear-gradient(#8fa6dc,#5672b8);border-bottom:1px solid #2b3a63;
+  text-shadow:1px 1px 0 #2b3a63;border-radius:2px 2px 0 0}
+.noticias{left:26px;top:96px;width:330px;height:268px}
+.noticias ul{list-style:none;margin:0;padding:4px 10px;height:232px;overflow-y:auto}
+.noticias li{padding:7px 0;border-bottom:1px dotted #b8bfcf}
+.noticias li:last-child{border-bottom:0}
+.noticias b{display:block;color:#1d2f6b;font-size:12px;margin-bottom:2px}
+.noticias span{color:#6a7182;font-size:11px}
+.noticias p{margin:3px 0 0;font-size:12px;line-height:1.4}
+
+/* Barra inferior: progreso y botones */
+.abajo{position:absolute;left:0;right:0;bottom:0;height:82px;
+  background:rgba(12,8,3,.86);border-top:1px solid #6b5326}
+.estado{position:absolute;left:26px;top:14px;width:410px;color:#fff;font-size:12px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progreso{position:absolute;left:26px;top:36px;width:410px;height:16px;background:#2a2418;
+  border:1px solid #6b5326;border-radius:2px}
+.relleno{width:0;height:100%;background:linear-gradient(#ffe48a,#d9a521);border-radius:1px}
+.relleno.error{background:linear-gradient(#ff9a8a,#c4402c)}
+.relleno.listo{background:linear-gradient(#b8f08a,#4f9a2c)}
+.enlaces{position:absolute;left:26px;top:58px;font-size:11px}
+.enlaces a{color:#e8c870;text-decoration:none;margin-right:14px;cursor:pointer}
+.enlaces a:hover{text-decoration:underline}
+
+.boton{position:absolute;cursor:pointer;text-align:center;font-weight:bold;border-radius:3px}
+.config{right:190px;top:24px;width:120px;height:34px;line-height:34px;font-size:12px;color:#222;
+  background:linear-gradient(#ffffff,#c9ced9);border:1px solid #7b8396}
+.config:hover{background:linear-gradient(#ffffff,#dde1ea)}
+.jugar{right:26px;top:16px;width:150px;height:50px;line-height:50px;font-size:20px;letter-spacing:2px;
+  color:#3a2a10;background:linear-gradient(#ffe48a,#d9a521);border:1px solid #6b5326;
+  text-shadow:1px 1px 0 #fff3c4}
+.jugar:hover{background:linear-gradient(#fff0b8,#e8b530)}
+.jugar.apagado,.jugar.apagado:hover{cursor:default;color:#6b6252;text-shadow:none;
+  background:linear-gradient(#a59d8a,#7c7564);border-color:#4a4436}
+</style>
+</head>
+<body>
+<div class="sombra"></div>
+
+<div class="letrero">NuestroRO<small>PRE-RENEWAL · 99/70 · DESDE CIUDAD DE MÉXICO</small></div>
+
+<div class="ventana noticias">
+  <div class="barra">Noticias</div>
+  <!-- Las noticias se editan aquí; llegan a todos al publicar los parches -->
+  <ul>
+    <li><b>Pantallas de carga nuevas</b><span>Parche 1 · Beta</span>
+      <p>Primera actualización por patcher: las pantallas de carga ya son del server.</p></li>
+    <li><b>Beta cerrada</b><span>Solo testers</span>
+      <p>Crea tu cuenta en el login con tu usuario terminado en _M o _F. Reporta cualquier error con captura.</p></li>
+    <li><b>WoE</b><span>Miércoles y viernes</span>
+      <p>Castillos de Prontera de 21:00 a 23:00, hora del centro de México.</p></li>
+  </ul>
+</div>
+
+<div class="abajo">
+  <div class="estado" id="estado">Buscando actualizaciones…</div>
+  <div class="progreso"><div class="relleno" id="relleno"></div></div>
+  <div class="enlaces">
+    <a onclick="reintentar()">Buscar de nuevo</a>
+    <a onclick="reparar()" title="Vuelve a descargar todos los parches">Reparar</a>
+  </div>
+  <div class="boton config" onclick="mandar('setup')">Configuración</div>
+  <div class="boton jugar apagado" id="jugar" onclick="jugar()">JUGAR</div>
+</div>
+
+<script>
+var listoParaJugar = false;
+
+// rPatchur expone external.invoke; en un navegador normal no existe.
+function mandar(orden) {
+  if (window.external && typeof window.external.invoke !== 'undefined') {
+    window.external.invoke(orden);
+  }
+}
+
+function pintar(porcentaje, clase, texto) {
+  var relleno = document.getElementById('relleno');
+  relleno.style.width = porcentaje + '%';
+  relleno.className = 'relleno' + (clase ? ' ' + clase : '');
+  document.getElementById('estado').innerHTML = texto;
+}
+
+function activarJugar() {
+  listoParaJugar = true;
+  document.getElementById('jugar').className = 'boton jugar';
+}
+
+function jugar() {
+  if (listoParaJugar) mandar('play');
+}
+
+function reintentar() {
+  pintar(0, '', 'Buscando actualizaciones…');
+  mandar('start_update');
+}
+
+function reparar() {
+  mandar('reset_cache');
+  reintentar();
+}
+
+function tamano(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1048576) return (bytes / 1024).toFixed(0) + ' KB';
+  return (bytes / 1048576).toFixed(1) + ' MB';
+}
+
+// Funciones que llama el patcher para avisar cómo va
+function patchingStatusReady() {
+  pintar(100, 'listo', 'Todo actualizado. ¡A jugar!');
+  activarJugar();
+}
+
+function patchingStatusError(mensaje) {
+  // Si falla la actualización se puede jugar igual con lo que ya tienes
+  pintar(100, 'error', 'No se pudo actualizar (' + mensaje + '). Puedes jugar igual.');
+  activarJugar();
+}
+
+function patchingStatusDownloading(bajados, total, bytesPorSegundo) {
+  var velocidad = bytesPorSegundo > 0 ? ' · ' + tamano(bytesPorSegundo) + '/s' : '';
+  pintar(total ? 100 * bajados / total : 0, '', 'Descargando parches ' + bajados + ' de ' + total + velocidad);
+}
+
+function patchingStatusInstalling(instalados, total) {
+  pintar(total ? 100 * instalados / total : 0, '', 'Instalando parches ' + instalados + ' de ' + total);
+}
+
+function patchingStatusPatchApplied(archivo) {
+  pintar(100, 'listo', 'Parche aplicado: ' + archivo);
+  activarJugar();
+}
+
+function notificationInProgress() {
+  document.getElementById('estado').innerHTML = 'Ya se está actualizando, espera tantito…';
+}
+
+window.onload = function () { mandar('start_update'); };
+</script>
+</body>
+</html>
