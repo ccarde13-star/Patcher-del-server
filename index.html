@@ -11,7 +11,7 @@
 html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden}
 body{
   position:relative;
-  background:#1a1208 url(img/fondo.jpg) right center no-repeat;
+  background:#1a1208 url(img/fondo-titan.jpg) left center no-repeat;
   font:13px Tahoma,Verdana,Arial,sans-serif;color:#222;
   -ms-user-select:none;user-select:none;cursor:default
 }
@@ -19,10 +19,10 @@ body{
 .sombra{position:absolute;left:0;top:0;bottom:0;width:470px;
   background:linear-gradient(to right,rgba(16,10,4,.88) 0%,rgba(16,10,4,.6) 70%,rgba(16,10,4,0) 100%)}
 
-.letrero{position:absolute;left:26px;top:20px;
+.letrero{position:absolute;left:22px;top:8px;
   font:bold 40px/1 Georgia,"Times New Roman",serif;color:#fffbe8;letter-spacing:1px;
   text-shadow:2px 2px 0 #3a2a10,-1px -1px 0 #3a2a10,1px -1px 0 #3a2a10,-1px 1px 0 #3a2a10}
-.letrero small{display:block;margin-top:6px;font:bold 11px Tahoma,Verdana,sans-serif;
+.letrero small{display:block;margin-top:2px;font:bold 11px Tahoma,Verdana,sans-serif;
   letter-spacing:2px;color:#fff;text-shadow:1px 1px 0 #000}
 
 /* Ventanas al estilo de la interfaz de RO */
@@ -68,14 +68,16 @@ body{
 </head>
 <body>
 <div class="sombra"></div>
-<div class="version">v3</div>
+<div class="version">v4</div>
 
-<div class="letrero">Titan RO<small>PRE-RENEWAL · 99/70 · DESDE CIUDAD DE MÉXICO</small></div>
+<div class="letrero"><img src="img/logo.png" alt="Titan RO" width="135" height="66"><small>PRE-RENEWAL · 99/70 · DESDE CIUDAD DE MÉXICO</small></div>
 
 <div class="ventana noticias">
   <div class="barra">Noticias</div>
   <!-- Las noticias se editan aquí; llegan a todos al publicar los parches -->
   <ul>
+    <li><b>¡Ahora somos Titan RO!</b><span>Parches 8 y 9 · Beta</span>
+      <p>Nuevo nombre, nueva pantalla de inicio y pantallas de carga: Odín, Muspelheim, Niflheim y la Guerra de Emperium.</p></li>
     <li><b>Trajes corregidos</b><span>Parche 6 · Beta</span>
       <p>El Yelmo de Odín y los demás trajes del reino ya se ven bien en la cabeza.</p></li>
     <li><b>Configuración guardada</b><span>Parches 4 y 5 · Beta</span>
