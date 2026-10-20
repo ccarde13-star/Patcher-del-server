@@ -5,3 +5,5 @@
 5 005-trajes-piso.thor
 6 006-trajes-tablas.thor
 7 007-servicio-web-usa.thor
+8 008-pantalla-login.thor
+9 009-pantallas-titan.thor
