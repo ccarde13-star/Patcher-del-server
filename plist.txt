@@ -8,3 +8,4 @@
 8 008-pantalla-login.thor
 9 009-pantallas-titan.thor
 10 010-npc-loki.thor
+11 011-npc-loki-v2.thor
