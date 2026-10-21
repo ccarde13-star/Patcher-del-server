@@ -7,3 +7,4 @@
 7 007-servicio-web-usa.thor
 8 008-pantalla-login.thor
 9 009-pantallas-titan.thor
+10 010-npc-loki.thor
