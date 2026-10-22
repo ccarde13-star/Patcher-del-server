@@ -9,3 +9,4 @@
 9 009-pantallas-titan.thor
 10 010-npc-loki.thor
 11 011-npc-loki-v2.thor
+12 012-npc-loki-v3.thor
