@@ -11,3 +11,4 @@
 11 011-npc-loki-v2.thor
 12 012-npc-loki-v3.thor
 13 013-npcs-tanda1.thor
+14 014-npcs-tanda2.thor
