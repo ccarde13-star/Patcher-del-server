@@ -14,3 +14,4 @@
 14 014-npcs-tanda2.thor
 15 015-npcs-estilo-ro.thor
 16 016-textos-armas.thor
+17 017-cliente-titanro.thor
