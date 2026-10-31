@@ -19,3 +19,4 @@
 19 019-letreros.thor
 20 020-letreros-ajuste.thor
 21 021-letreros-guia-estatuas.thor
+22 022-letrero-valhalla.thor
