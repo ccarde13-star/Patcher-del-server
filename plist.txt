@@ -18,3 +18,4 @@
 18 018-sclientinfo-dominio.thor
 19 019-letreros.thor
 20 020-letreros-ajuste.thor
+21 021-letreros-guia-estatuas.thor
