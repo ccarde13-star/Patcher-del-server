@@ -22,3 +22,4 @@
 22 022-letrero-valhalla.thor
 23 023-letreros-campamento.thor
 24 024-letrero-loki.thor
+25 025-letreros-ciudades.thor
