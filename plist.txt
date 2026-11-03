@@ -25,3 +25,5 @@
 25 025-letreros-ciudades.thor
 26 026-placas-cp.thor
 27 027-cash-shop.thor
+28 028-capa-fundador.thor
+29 029-capa-fundador-texto.thor
