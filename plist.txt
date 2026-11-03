@@ -27,3 +27,4 @@
 27 027-cash-shop.thor
 28 028-capa-fundador.thor
 29 029-capa-fundador-texto.thor
+30 030-cofre-asgard.thor
