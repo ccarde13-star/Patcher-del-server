@@ -30,3 +30,5 @@
 30 030-cofre-asgard.thor
 31 031-caja-valhalla.thor
 32 032-caja-valhalla-texto.thor
+33 033-cuervos-odin.thor
+34 034-cuervos-odin-texto.thor
