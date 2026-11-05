@@ -32,3 +32,4 @@
 32 032-caja-valhalla-texto.thor
 33 033-cuervos-odin.thor
 34 034-cuervos-odin-texto.thor
+35 035-trajes-piso-2.thor
