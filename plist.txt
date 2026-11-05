@@ -36,3 +36,4 @@
 36 036-trajes-tablas-2.thor
 37 037-trajes-ids.thor
 38 038-trajes-ids-grf.thor
+39 039-cuervos-parado.thor
