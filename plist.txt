@@ -37,3 +37,4 @@
 37 037-trajes-ids.thor
 38 038-trajes-ids-grf.thor
 39 039-cuervos-parado.thor
+40 040-cuervos-yelmo.thor
