@@ -34,3 +34,5 @@
 34 034-cuervos-odin-texto.thor
 35 035-trajes-piso-2.thor
 36 036-trajes-tablas-2.thor
+37 037-trajes-ids.thor
+38 038-trajes-ids-grf.thor
