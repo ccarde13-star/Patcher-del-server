@@ -33,3 +33,4 @@
 33 033-cuervos-odin.thor
 34 034-cuervos-odin-texto.thor
 35 035-trajes-piso-2.thor
+36 036-trajes-tablas-2.thor
