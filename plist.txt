@@ -39,3 +39,4 @@
 39 039-cuervos-parado.thor
 40 040-cuervos-yelmo.thor
 41 041-caja-rate.thor
+42 042-asistencia.thor
