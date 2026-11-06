@@ -40,3 +40,4 @@
 40 040-cuervos-yelmo.thor
 41 041-caja-rate.thor
 42 042-asistencia.thor
+43 043-capa-fundador-2.thor
