@@ -43,3 +43,4 @@
 43 043-capa-fundador-2.thor
 44 044-gunslinger-colores.thor
 45 045-sin-traje-gm.thor
+46 046-traje-gm-de-vuelta.thor
