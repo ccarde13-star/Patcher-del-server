@@ -41,3 +41,4 @@
 41 041-caja-rate.thor
 42 042-asistencia.thor
 43 043-capa-fundador-2.thor
+44 044-gunslinger-colores.thor
