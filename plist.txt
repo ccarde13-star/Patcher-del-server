@@ -52,3 +52,5 @@
 52 049-hombreras-freya.thor
 53 050-hombreras-freya-texto.thor
 54 051-hombreras-freya-ids.thor
+55 052-prueba-ids.thor
+56 053-prueba-ids-grf.thor
