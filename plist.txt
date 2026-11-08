@@ -55,3 +55,4 @@
 55 052-prueba-ids.thor
 56 053-prueba-ids-grf.thor
 57 054-hombreras-freya-suelto.thor
+58 055-endgame-furia-texto.thor
