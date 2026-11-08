@@ -46,3 +46,4 @@
 46 046-traje-gm-de-vuelta.thor
 47 047-colores-ropa.thor
 48 047-colores-ropa.thor
+49 047-colores-ropa.thor
