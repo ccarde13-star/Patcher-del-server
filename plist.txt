@@ -49,3 +49,5 @@
 49 047-colores-ropa.thor
 50 048-pack-553.thor
 51 049-hombreras-freya.thor
+52 049-hombreras-freya.thor
+53 050-hombreras-freya-texto.thor
