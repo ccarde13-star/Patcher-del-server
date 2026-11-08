@@ -47,3 +47,4 @@
 47 047-colores-ropa.thor
 48 047-colores-ropa.thor
 49 047-colores-ropa.thor
+50 048-pack-553.thor
