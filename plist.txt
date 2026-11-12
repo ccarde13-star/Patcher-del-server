@@ -58,3 +58,5 @@
 58 055-endgame-furia-texto.thor
 59 056-textos-tienda.thor
 60 057-furia-255.thor
+61 058-botones-ingles.thor
+62 059-hombreras-abajo.thor
