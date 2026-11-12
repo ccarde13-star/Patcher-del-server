@@ -57,3 +57,4 @@
 57 054-hombreras-freya-suelto.thor
 58 055-endgame-furia-texto.thor
 59 056-textos-tienda.thor
+60 057-furia-255.thor
